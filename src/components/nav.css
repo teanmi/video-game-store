@@ -1,0 +1,88 @@
+.nav {
+  background-color: var(--main-blue);
+}
+
+.nav__container {
+  max-width: 1100px;
+  margin: 0 auto;
+  height: 80px;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__company {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav__logo {
+  color: var(--white);
+  font-size: 40px;
+}
+
+.nav__companyName {
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--white);
+  margin-left: 8px;
+}
+
+.nav__links {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.nav__link,
+.nav__link a {
+  text-decoration: none;
+  color: var(--white);
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+}
+
+.nav__linkHoverUnderline::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  background-color: var(--white);
+  transition: width 300ms ease;
+}
+
+.nav__linkHoverUnderline:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.nav__linkBtn {
+  background-color: var(--white);
+  position: relative;
+  color: var(--main-blue);
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+.nav__linkBtn:hover {
+  -webkit-box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.5);
+-moz-box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.5);
+box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.5);
+}
+
+.nav__linkBtnHover {
+  transition: all 0.2s ease;
+  scale: 1;
+  
+}
+
+.nav__linkBtnHover:hover {
+  scale: 1.1;
+}

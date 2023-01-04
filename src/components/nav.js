@@ -3,30 +3,39 @@
 import React from "react";
 import VideogameAssetIcon from "@mui/icons-material/VideogameAsset";
 import { Link } from "react-router-dom";
+import "./nav.css";
 
 const Nav = () => {
   return (
     <nav className="nav">
-      <div className="nav__company">
-        <div className="nav__logo">
-          <VideogameAssetIcon />
+      <div className="nav__container">
+        <div className="nav__company">
+          <VideogameAssetIcon fontSize="large" className="nav__logo" />
+          <div className="nav__companyName">Game Mart</div>
         </div>
-        <div className="nav__companyName">Game Mart</div>
+        <ul className="nav__links">
+          <li>
+            <a className="nav__link nav__linkHoverUnderline" href="#">
+              Home
+            </a>
+          </li>
+          <li>
+            <a className="nav__link nav__linkHoverUnderline" href="#deals">
+              Deals
+            </a>
+          </li>
+          <li>
+            <a className="nav__link nav__linkHoverUnderline" href="#values">
+              Values
+            </a>
+          </li>
+          <li className="nav__linkBtnHover">
+            <Link className="nav__link nav__linkBtn"  to="/search">
+              Search
+            </Link>
+          </li>
+        </ul>
       </div>
-      <ul className="nav__links">
-        <li className="nav__link">
-          <a href="#">Home</a>
-        </li>
-        <li className="nav__link">
-          <a href="#deals">Deals</a>
-        </li>
-        <li className="nav__link">
-          <a href="#values">Values</a>
-        </li>
-        <li className="nav__link">
-          <Link to="/search">Search</Link>
-        </li>
-      </ul>
     </nav>
   );
 };
