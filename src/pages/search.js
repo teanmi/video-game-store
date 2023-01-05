@@ -1,9 +1,12 @@
 import React from 'react';
+import CartButton from '../components/cartButton';
+import Nav from '../components/nav';
 
 const Search = () => {
   return (
     <div>
-      Hello
+      <Nav links="search" />
+      <CartButton />
     </div>
   );
 }

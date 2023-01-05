@@ -1,4 +1,3 @@
-import './App.css';
 import {
   BrowserRouter as Router,
   Routes,
@@ -6,6 +5,7 @@ import {
 } from "react-router-dom";
 import Home from "./pages/home"
 import Search from "./pages/search"
+import Cart from './pages/cart';
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/search' element={<Search />}/>
+        <Route path='/cart' element={<Cart />} />
       </Routes>
     </Router>
   );

@@ -5,14 +5,16 @@
   background-color: var(--main-blue);
   border-radius: 50%;
   padding: 16px;
+  -webkit-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.5);
+  scale: 1;
+  transition: scale 400ms ease;
 }
 
 .cart:hover {
   cursor: pointer;
   scale: 1.1;
-  -webkit-box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.5);
--moz-box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.5);
-box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.5);
 }
 
 .cart:active {

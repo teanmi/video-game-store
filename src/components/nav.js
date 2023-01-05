@@ -5,7 +5,7 @@ import VideogameAssetIcon from "@mui/icons-material/VideogameAsset";
 import { Link } from "react-router-dom";
 import "./nav.css";
 
-const Nav = () => {
+const Nav = ({links}) => {
   return (
     <nav className="nav">
       <div className="nav__container">
@@ -14,25 +14,27 @@ const Nav = () => {
           <div className="nav__companyName">Game Mart</div>
         </div>
         <ul className="nav__links">
-          <li>
-            <a className="nav__link nav__linkHoverUnderline" href="#">
+          {(links === "home" || links === "cart") && <li>
+            <Link to="/" className="nav__link nav__linkHoverUnderline" href="#">
               Home
-            </a>
-          </li>
-          <li>
+            </Link>
+          </li>}
+          { links === "home" && <li>
             <a className="nav__link nav__linkHoverUnderline" href="#deals">
               Deals
             </a>
-          </li>
-          <li>
+          </li>}
+          {links === "home" && <li>
             <a className="nav__link nav__linkHoverUnderline" href="#values">
               Values
             </a>
-          </li>
+          </li>}
           <li className="nav__linkBtnHover">
-            <Link className="nav__link nav__linkBtn"  to="/search">
+            {links === "search" ? <Link className="nav__link nav__linkBtn"  to="/">
+              Home
+              </Link> : <Link className="nav__link nav__linkBtn"  to="/search">
               Search
-            </Link>
+              </Link>}
           </li>
         </ul>
       </div>
