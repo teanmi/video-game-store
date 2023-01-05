@@ -77,6 +77,8 @@
 box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.5);
 }
 
+
+
 .nav__linkBtnHover {
   transition: all 0.2s ease;
   scale: 1;
@@ -85,4 +87,8 @@ box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.5);
 
 .nav__linkBtnHover:hover {
   scale: 1.1;
+}
+
+.nav__linkBtnHover:active {
+  scale: 0.9;
 }
