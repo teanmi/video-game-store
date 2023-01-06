@@ -3,12 +3,23 @@
   max-width: 1100px;
   margin: 0 auto;
   padding: 32px;
+  position: relative;
 }
 
 .homeHeader__container {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.homeHeader__container::after {
+  content: "";
+  width: 90%;
+  height: 1px;
+  background-color: var(--main-blue);
+  position: absolute;
+  bottom: -4px;
+  margin: 0 auto;
 }
 
 .homeHeader__words {
@@ -24,7 +35,6 @@
   font-size: 32px;
   margin-bottom: 16px;
 }
-
 
 @media (max-width: 728px) {
   .homeHeader__title {

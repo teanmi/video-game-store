@@ -22,3 +22,12 @@ img {
   width: 100%;
 }
 
+@keyframes loadIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
