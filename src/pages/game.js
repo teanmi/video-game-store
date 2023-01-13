@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { RAWG_API_KEY } from "../apiKey";
 import { useParams } from "react-router-dom";
+import Nav from "../components/nav";
+import CartButton from "../components/cartButton";
 
 const Game = (props) => {
   const options = {
@@ -24,9 +26,12 @@ const Game = (props) => {
       .catch((err) => console.error(err));
   }, []);
 
-  return <div>
-    
-  </div>;
+  return (
+    <div>
+      <Nav links="cart" />
+      <CartButton />
+    </div>
+  );
 };
 
 export default Game;

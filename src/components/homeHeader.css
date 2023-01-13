@@ -12,15 +12,7 @@
   align-items: center;
 }
 
-.homeHeader__container::after {
-  content: "";
-  width: 90%;
-  height: 1px;
-  background-color: var(--main-blue);
-  position: absolute;
-  bottom: -8px;
-  margin: 0 auto;
-}
+
 
 .homeHeader__words {
   text-align: center;

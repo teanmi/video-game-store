@@ -1,0 +1,16 @@
+#values {
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top: 72px;
+  text-align: center;
+}
+
+.values__container {
+  padding: 0 48px;
+}
+
+.values__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+

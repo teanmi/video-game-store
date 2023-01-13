@@ -3,6 +3,8 @@ import Nav from "../components/nav";
 import CartButton from "../components/cartButton";
 import HomeHeader from "../components/homeHeader";
 import Games from "../components/games";
+import HomeValues from "../components/homeValues"
+import Footer from "../components/footer";
 
 const Home = () => {
   
@@ -14,6 +16,8 @@ const Home = () => {
       <CartButton />
       <HomeHeader />
       <Games />
+      <HomeValues />
+      <Footer />
     </div>
   );
 };

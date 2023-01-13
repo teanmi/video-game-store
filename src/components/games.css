@@ -6,17 +6,17 @@
 }
 
 .games__container {
-  margin: 0 32px;
-}
-
-.games__title {
-  color: var(--main-pink);
-  font-size: 48px;
+  padding: 0 32px;
+  position: relative;
 }
 
 .games__list {
   margin-top: 28px;
-
   display: flex;
   flex-wrap: wrap;
+}
+
+.games__container::after {
+  bottom: -48px;
+  left: 5%;
 }

@@ -1,0 +1,13 @@
+.footer {
+  background-color: var(--main-blue);
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 52px;
+}
+
+.footer__copyright {
+  color: var(--white);
+  font-size: 18px
+}

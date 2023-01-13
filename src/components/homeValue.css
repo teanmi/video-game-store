@@ -1,0 +1,28 @@
+.value {
+  width: 33%;
+  padding: 0 24px;
+}
+
+.value__title {
+  color: var(--main-pink);
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-size: 21px;
+}
+
+.value__para {
+  font-size: 17px;
+  color: var(--dark-grey)
+}
+
+@media (max-width: 728px) {
+  .value {
+    width: 100%;
+    padding: 0;
+  }
+
+  .value__para {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
