@@ -3,6 +3,7 @@ import CartButton from "../components/general/cartButton";
 import Footer from "../components/general/footer";
 import Nav from "../components/general/nav";
 import SearchBar from "../components/search/searchBar";
+import Slideshow from "../components/search/slideshow";
 
 const Search = () => {
   return (
@@ -10,6 +11,7 @@ const Search = () => {
       <Nav links="search" />
       <CartButton />
       <SearchBar />
+      <Slideshow />
       <Footer />
     </div>
   );

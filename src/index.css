@@ -3,6 +3,7 @@
 :root {
   --main-blue: #66bfbf;
   --main-pink: #f76b8a;
+  --secondary-pink: #b67583; 
   --light-grey: #eaf6f6;
   --white: #fcfefe;
   --black-border: black;
@@ -47,4 +48,9 @@ img {
   100% {
     opacity: 1;
   }
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1;}
 }

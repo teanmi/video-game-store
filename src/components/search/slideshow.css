@@ -1,0 +1,35 @@
+.slideshow {
+  margin-top: 40px;
+  padding: 0 32px;
+}
+
+.slideshow__container {
+  max-width: 1100px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 2s;
+}
+
+.slide img {
+  aspect-ratio: 16 / 9 ;
+}
+
+.slide__text {
+  text-align: center;
+}
+
+@media (max-width: 728px) {
+  .slide img {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 550px) {
+  .slide img {
+    aspect-ratio: 8 / 9;
+  }
+}
