@@ -1,10 +1,11 @@
 import React from "react";
-import Nav from "../components/nav";
-import CartButton from "../components/cartButton";
-import HomeHeader from "../components/homeHeader";
-import Games from "../components/games";
-import HomeValues from "../components/homeValues"
-import Footer from "../components/footer";
+import Nav from "../components/general/nav";
+import CartButton from "../components/general/cartButton";
+import HomeHeader from "../components/home/homeHeader";
+import Games from "../components/home/games";
+import HomeValues from "../components/home/homeValues"
+import Footer from "../components/general/footer";
+import "./home.css"
 
 const Home = () => {
   

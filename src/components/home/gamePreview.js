@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./gamePreview.css";
-import { RAWG_API_KEY } from "../apiKey";
+import { RAWG_API_KEY } from "../../apiKey";
 import { Link } from "react-router-dom";
 
 const Game = ({ game }) => {

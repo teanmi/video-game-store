@@ -4,10 +4,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 52px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }
 
 .footer__copyright {
   color: var(--white);
-  font-size: 18px
+  font-size: 18px;
 }

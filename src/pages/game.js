@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { RAWG_API_KEY } from "../apiKey";
 import { useParams } from "react-router-dom";
-import Nav from "../components/nav";
-import CartButton from "../components/cartButton";
+import Nav from "../components/general/nav";
+import CartButton from "../components/general/cartButton";
 
 const Game = (props) => {
   const options = {
