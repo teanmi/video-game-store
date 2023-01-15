@@ -21,6 +21,13 @@ const SearchBar = () => {
     setGameName(event.target.value);
   };
 
+  const enterKeyListener = (event) => {
+    event.preventDefault();
+    if (event.key === "Enter") {
+      searchGame();
+    }
+  };
+
   const searchGame = async () => {
     if (gameName === "") {
       alert("Error: No Game Entered");
@@ -32,17 +39,16 @@ const SearchBar = () => {
       `https://rawg-video-games-database.p.rapidapi.com/games/${game}?key=${RAWG_API_KEY}`,
       options
     )
-    .then((response) => {
-      if(response.status !== 404) {
-        navigate(`/game/${game}`)
-      }
-      else {
-        alert(`Error: ${game} Not Found`)
-      }
-    })
-    .catch(error => {
-      console.log(error)
-    })
+      .then((response) => {
+        if (response.status !== 404) {
+          navigate(`/game/${game}`);
+        } else {
+          alert(`Error: ${game} Not Found`);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -51,6 +57,7 @@ const SearchBar = () => {
         <div className="searchBar__row">
           <SearchIcon className="searchBar__img" fontSize="large" />
           <input
+            onKeyUp={(event) => enterKeyListener(event)}
             className="searchBar__input"
             type="text"
             placeholder="Enter Game Title"

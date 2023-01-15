@@ -34,17 +34,36 @@ const Game = (props) => {
       <div className="game__container">
         <div className="game__box">
           <h2 className="game__title">{gameData?.name}</h2>
-          <img className="game__image" src={gameData?.background_image} alt="" />
-          <ul className="game__developers">Developers: {gameData?.developers?.map((item, index) => {
-            if (index <= 2) {return <li className="game__developer" key={index}>{item.name}</li>}
-          })}
+          <img
+            className="game__image"
+            src={gameData?.background_image}
+            alt=""
+          />
+          <ul className="game__developers">
+            Developers:{" "}
+            {gameData?.developers?.map((item, index) => {
+              if (index < 3) {
+                return (
+                  <li className="game__developer" key={index}>
+                    {item.name}
+                  </li>
+                );
+              }
+            })}
           </ul>
           <p className="game__rating line-break">
-            Rating: {gameData?.rating} / 5.0
+            Rating: {Math.round(gameData?.rating * 10) / 10} / 5.0
           </p>
-          <ul className="game__genres line-break">Genres: 
+          <ul className="game__genres line-break">
+            Genres:
             {gameData?.genres?.map((item, index) => {
-              return <li className="game__genre" key={index}>{item.name}</li>;
+              if (index < 5) {
+                return (
+                  <li className="game__genre" key={index}>
+                    {item.name}
+                  </li>
+                );
+              }
             })}
           </ul>
           <p className="game__description line-break">
