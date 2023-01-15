@@ -3,6 +3,7 @@ import { RAWG_API_KEY } from "../apiKey";
 import { useParams } from "react-router-dom";
 import Nav from "../components/general/nav";
 import CartButton from "../components/general/cartButton";
+import Footer from "../components/general/footer";
 
 const Game = (props) => {
   const options = {
@@ -25,11 +26,35 @@ const Game = (props) => {
       .then((data) => setGameData(data))
       .catch((err) => console.error(err));
   }, []);
+  console.log(gameData);
 
   return (
     <div>
       <Nav links="cart" />
+      <div className="game__container">
+        <div className="game__box">
+          <h2 className="game__title">{gameData?.name}</h2>
+          <img className="game__image" src={gameData?.background_image} alt="" />
+          <ul className="game__developers">Developers: {gameData?.developers?.map((item, index) => {
+            if (index <= 2) {return <li className="game__developer" key={index}>{item.name}</li>}
+          })}
+          </ul>
+          <p className="game__rating line-break">
+            Rating: {gameData?.rating} / 5.0
+          </p>
+          <ul className="game__genres line-break">Genres: 
+            {gameData?.genres?.map((item, index) => {
+              return <li className="game__genre" key={index}>{item.name}</li>;
+            })}
+          </ul>
+          <p className="game__description line-break">
+            {gameData?.description_raw}
+          </p>
+        </div>
+      </div>
+
       <CartButton />
+      <Footer />
     </div>
   );
 };
