@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./slideshow.css";
 
 const Slideshow = () => {
   const data = [
-    <div key={1} className="slide fade">
+    <Link to="../game/elden-ring" key={1} className="slide fade">
       <img src="images/elden-ring.jpg" alt="" />
       <div className="slide__text">Elden Ring</div>
-    </div>,
-    <div key={2} className="slide fade">
+    </Link>,
+    <Link to="../game/god-of-war-ragnarok" key={2} className="slide fade">
       <img src="images/god-of-war.jpg" alt="" />
       <div className="slide__text">God of War Ragnarok</div>
-    </div>,
-    <div key={3} className="slide fade">
+    </Link>,
+    <Link to="../game/far-cry-6" key={3} className="slide fade">
       <img src="images/far-cry-6.jpg" alt="" />
       <div className="slide__text">Far Cry 6</div>
-    </div>,
+    </Link>,
   ];
 
   const [slideIndex, setSlideIndex] = useState(0);

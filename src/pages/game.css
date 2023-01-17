@@ -1,0 +1,36 @@
+.gamePage {
+  position: relative;
+  min-height: 100vh;
+}
+
+.gamePage__container {
+  padding: 0 32px;
+  padding-bottom: 80px;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 32px;
+}
+
+.gamePage__box {
+  background-color: var(--dark-grey);
+  border: 5px solid var(--black-border);
+  display: flex;
+  flex-direction: column;
+  padding: 16px 32px;
+
+  
+}
+
+.gamePage__title {
+  margin-bottom: 16px;
+  color: black;
+  align-self: center;
+}
+
+.gamePage__image {
+  max-height: 400px;
+  object-fit: contain;
+  align-self: center;
+  margin-bottom: 24px;
+}
+

@@ -4,20 +4,25 @@ import { useParams } from "react-router-dom";
 import Nav from "../components/general/nav";
 import CartButton from "../components/general/cartButton";
 import Footer from "../components/general/footer";
+import { useDispatch } from "react-redux";
+import { add } from "../redux/cartSlice";
+import "./game.css";
 
 const Game = (props) => {
-  const options = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": "30fac0e023mshc7c5d1f1684fb73p182a44jsndaa7317df460",
-      "X-RapidAPI-Host": "rawg-video-games-database.p.rapidapi.com",
-    },
-  };
+  const dispatch = useDispatch();
 
   let params = useParams();
   const [gameData, setGameData] = useState({});
 
   useEffect(() => {
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": "30fac0e023mshc7c5d1f1684fb73p182a44jsndaa7317df460",
+        "X-RapidAPI-Host": "rawg-video-games-database.p.rapidapi.com",
+      },
+    };
+
     fetch(
       `https://rawg-video-games-database.p.rapidapi.com/games/${params.game}?key=${RAWG_API_KEY}`,
       options
@@ -25,50 +30,57 @@ const Game = (props) => {
       .then((response) => response.json())
       .then((data) => setGameData(data))
       .catch((err) => console.error(err));
-  }, []);
+  }, [params.game]);
   console.log(gameData);
 
   return (
-    <div>
+    <div className="gamePage">
       <Nav links="cart" />
-      <div className="game__container">
-        <div className="game__box">
-          <h2 className="game__title">{gameData?.name}</h2>
+
+      <div className="gamePage__container">
+        <div className="gamePage__box">
+          <h2 className="gamePage__title">{gameData?.name}</h2>
           <img
-            className="game__image"
+            className="gamePage__image"
             src={gameData?.background_image}
             alt=""
           />
-          <ul className="game__developers">
+          <ul className="gamePage__developers">
             Developers:{" "}
             {gameData?.developers?.map((item, index) => {
               if (index < 3) {
                 return (
-                  <li className="game__developer" key={index}>
+                  <li className="gamePage__developer" key={index}>
                     {item.name}
                   </li>
                 );
               }
             })}
           </ul>
-          <p className="game__rating line-break">
+          <p className="gamePage__rating line-break">
             Rating: {Math.round(gameData?.rating * 10) / 10} / 5.0
           </p>
-          <ul className="game__genres line-break">
+          <ul className="gamePage__genres line-break">
             Genres:
             {gameData?.genres?.map((item, index) => {
               if (index < 5) {
                 return (
-                  <li className="game__genre" key={index}>
+                  <li className="gamePage__genre" key={index}>
                     {item.name}
                   </li>
                 );
               }
             })}
           </ul>
-          <p className="game__description line-break">
+          <p className="gamePage__description line-break">
             {gameData?.description_raw}
           </p>
+          <button
+            className="gamePage__AddCartBtn"
+            onClick={() => dispatch(add(gameData))}
+          >
+            Add To Cart
+          </button>
         </div>
       </div>
 
