@@ -12,7 +12,7 @@ export const cartSlice = createSlice({
       let index = -1;
 
       state.games.forEach((gameData, gameIndex) => {
-        if (gameData.payload.title === game.payload.title) {
+        if (gameData.payload.id === game.payload.id) {
           index = gameIndex;
         }
       });

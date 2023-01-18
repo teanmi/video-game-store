@@ -31,7 +31,6 @@ const Game = (props) => {
       .then((data) => setGameData(data))
       .catch((err) => console.error(err));
   }, [params.game]);
-  console.log(gameData);
 
   return (
     <div className="gamePage">
@@ -45,28 +44,30 @@ const Game = (props) => {
             src={gameData?.background_image}
             alt=""
           />
-          <ul className="gamePage__developers">
-            Developers:{" "}
+          <ul className="gamePage__developers line-break">
+            <span className="gamePage__value">Developers:</span> {"     "}
             {gameData?.developers?.map((item, index) => {
               if (index < 3) {
                 return (
                   <li className="gamePage__developer" key={index}>
                     {item.name}
+                    {(index !== 2 && index !== gameData.developers.length - 1) && ","}
                   </li>
                 );
               }
             })}
           </ul>
           <p className="gamePage__rating line-break">
-            Rating: {Math.round(gameData?.rating * 10) / 10} / 5.0
+            <span className="gamePage__value">Rating:</span>{Math.round(gameData?.rating * 10) / 10} / 5.0
           </p>
           <ul className="gamePage__genres line-break">
-            Genres:
+            <span className="gamePage__value">Genres:</span>
             {gameData?.genres?.map((item, index) => {
               if (index < 5) {
                 return (
                   <li className="gamePage__genre" key={index}>
                     {item.name}
+                    {(index !== 4 && index !== gameData.genres.length - 1) && ","}
                   </li>
                 );
               }
@@ -75,8 +76,9 @@ const Game = (props) => {
           <p className="gamePage__description line-break">
             {gameData?.description_raw}
           </p>
+          <span className="line-break"></span>
           <button
-            className="gamePage__AddCartBtn"
+            className="gamePage__addToCartBtn "
             onClick={() => dispatch(add(gameData))}
           >
             Add To Cart
