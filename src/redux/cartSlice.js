@@ -29,9 +29,32 @@ export const cartSlice = createSlice({
         state.games = state.games.splice(index, 1);
       }
     },
+    setAmount: (state, game) => {
+      let index;
+
+      state.games.forEach((gameData, gameIndex) => {
+        if (gameData.payload.id === game.payload.gameData.id) {
+          index = gameIndex;
+        }
+      });
+
+      state.games[index].amount = game.payload.amount;
+      console.log(state.games);
+    },
+    deleteGame: (state, game) => {
+      let index;
+      
+      state.games.forEach((gameData, gameIndex) => {
+        if (gameData.payload.id === game.payload.id) {
+          index = gameIndex;
+        }
+      });
+
+      state.games.splice(index, 1)
+    }
   },
 });
 
-export const { add, remove } = cartSlice.actions;
+export const { add, remove, setAmount, deleteGame } = cartSlice.actions;
 
 export default cartSlice.reducer;

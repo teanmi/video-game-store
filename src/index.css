@@ -25,6 +25,10 @@ img {
   width: 100%;
 }
 
+.pink {
+  color: var(--main-pink)
+}
+
 .home__title {
   color: var(--main-pink);
   font-size: 48px;

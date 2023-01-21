@@ -18,9 +18,9 @@ const CartButton = () => {
   }, [cart]);
 
   return (
-    <Link to="/cart" className="cart">
-      <ShoppingCartIcon className="cart__img" />
-      {cart.length > 0 && <div className="cart__number">{itemsInCart}</div>}
+    <Link to="/cart" className="cartBtn">
+      <ShoppingCartIcon className="cartBtn__img" />
+      {itemsInCart > 0 && <div className="cartBtn__number">{itemsInCart}</div>}
     </Link>
   );
 };

@@ -1,4 +1,4 @@
-.cart {
+.cartBtn {
   position: fixed;
   bottom: 36px;
   right: 36px;
@@ -13,20 +13,20 @@
   z-index: 9999;
 }
 
-.cart:hover {
+.cartBtn:hover {
   cursor: pointer;
   scale: 1.1;
 }
 
-.cart:active {
+.cartBtn:active {
   scale: 0.9;
 }
 
-.cart__img {
+.cartBtn__img {
   color: var(--white);
 }
 
-.cart__number {
+.cartBtn__number {
   display: flex;
   align-items: center;
   justify-content: center;
