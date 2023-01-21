@@ -10,6 +10,8 @@ import "./game.css";
 
 const Game = (props) => {
   const dispatch = useDispatch();
+  
+  const [gameDataLoaded, setGameDataLoaded] = useState(false);
 
   let params = useParams();
   const [gameData, setGameData] = useState({});
@@ -29,6 +31,7 @@ const Game = (props) => {
     )
       .then((response) => response.json())
       .then((data) => setGameData(data))
+      .then(() => setGameDataLoaded(true))
       .catch((err) => console.error(err));
   }, [params.game]);
 
@@ -77,12 +80,12 @@ const Game = (props) => {
             {gameData?.description_raw}
           </p>
           <span className="line-break"></span>
-          <button
+          {gameDataLoaded && <button
             className="gamePage__addToCartBtn "
             onClick={() => dispatch(add(gameData))}
           >
             Add To Cart
-          </button>
+          </button>}
         </div>
       </div>
 
