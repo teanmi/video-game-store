@@ -4,14 +4,15 @@ import Footer from "../components/general/footer";
 import Nav from "../components/general/nav";
 import SearchBar from "../components/search/searchBar";
 import Slideshow from "../components/search/slideshow";
+import "./search.css"
 
 const Search = () => {
   return (
-    <div>
+    <div className="search">
       <Nav links="search" />
-      <CartButton />
       <SearchBar />
       <Slideshow />
+      <CartButton />
       <Footer />
     </div>
   );
