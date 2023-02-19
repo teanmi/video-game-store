@@ -19,7 +19,7 @@
 }
 
 .game__pictureContainer:hover {
-  opacity: .9;
+  opacity: 0.9;
 }
 
 .game__picture {

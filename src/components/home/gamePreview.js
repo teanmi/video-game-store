@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./gamePreview.css";
 import { RAWG_API_KEY } from "../../apiKey";
 import { Link } from "react-router-dom";
+import Skeleton from "../ui/skeleton";
 
 const Game = ({ game }) => {
+  const [loading, setLoading] = useState(false);
+
   const options = {
     method: "GET",
     headers: {
@@ -15,12 +18,14 @@ const Game = ({ game }) => {
   const [gameData, setGameData] = useState({});
 
   useEffect(() => {
+    setLoading(true)
     fetch(
       `https://rawg-video-games-database.p.rapidapi.com/games/${game}?key=${RAWG_API_KEY}`,
       options
     )
       .then((response) => response.json())
       .then((data) => setGameData(data))
+      .then(() => setLoading(false))
       .catch((err) => console.error(err));
   }, []);
 
@@ -28,13 +33,14 @@ const Game = ({ game }) => {
     <div className="game">
       <Link to={`/game/${game}`} className="game__link">
         <div className="game__pictureContainer">
-          <img
+          {!loading ? <img
             src={gameData?.background_image}
             alt=""
             className="game__picture"
-          />
+          /> : <Skeleton width="100%" height="100%"/>}
         </div>
-        <h3 className="game__title">{gameData.name}</h3>
+        {!loading ? <h3 className="game__title">{gameData.name}</h3> : <Skeleton width="100%"
+        height="16px" />}
       </Link>
     </div>
   );

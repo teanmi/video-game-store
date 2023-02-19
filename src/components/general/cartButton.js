@@ -9,7 +9,6 @@ const CartButton = () => {
   const [itemsInCart, setItemsInCart] = useState(0);
 
   useEffect(() => {
-    console.log(cart);
     let i = 0;
     cart.forEach((game) => {
       i += game.amount;

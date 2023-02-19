@@ -12,7 +12,6 @@ const Cart = () => {
   const SALES_TAX = 0.07;
 
   useEffect(() => {
-    console.log(cart);
     let i = 0;
     cart.forEach((game) => {
       i += game.amount;

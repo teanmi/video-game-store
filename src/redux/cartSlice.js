@@ -39,7 +39,6 @@ export const cartSlice = createSlice({
       });
 
       state.games[index].amount = game.payload.amount;
-      console.log(state.games);
     },
     deleteGame: (state, game) => {
       let index;

@@ -1,19 +1,48 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./slideshow.css";
+import Skeleton from "../ui/skeleton";
 
 const Slideshow = () => {
+  const [loaded1, setLoaded1] = useState(false);
+  const [loaded2, setLoaded2] = useState(false);
+  const [loaded3, setLoaded3] = useState(false);
+
   const data = [
     <Link to="../game/elden-ring" key={1} className="slide fade">
-      <img src="images/elden-ring.jpg" alt="" />
+      <div className="slideshowImg__container">
+        {loaded1 ? null : <Skeleton width="100%" height="100%" />}
+        <img
+          onLoad={() => setLoaded1(true)}
+          style={loaded1 ? {} : { display: "none" }}
+          src="images/elden-ring.jpg"
+          alt=""
+        />
+      </div>
       <div className="slide__text">Elden Ring</div>
     </Link>,
     <Link to="../game/god-of-war-ragnarok" key={2} className="slide fade">
-      <img src="images/god-of-war.jpg" alt="" />
+      <div className="slideshowImg__container">
+        {loaded1 ? null : <Skeleton width="100%" height="100%" />}
+        <img
+          onLoad={() => setLoaded1(true)}
+          style={loaded1 ? {} : { display: "none" }}
+          src="images/god-of-war.jpg"
+          alt=""
+        />
+      </div>
       <div className="slide__text">God of War Ragnarok</div>
     </Link>,
     <Link to="../game/far-cry-6" key={3} className="slide fade">
-      <img src="images/far-cry-6.jpg" alt="" />
+      <div className="slideshowImg__container">
+        {loaded1 ? null : <Skeleton width="100%" height="100%" />}
+        <img
+          onLoad={() => setLoaded1(true)}
+          style={loaded1 ? {} : { display: "none" }}
+          src="images/far-cry-6.jpg"
+          alt=""
+        />
+      </div>
       <div className="slide__text">Far Cry 6</div>
     </Link>,
   ];
@@ -38,8 +67,8 @@ const Slideshow = () => {
     <div className="slideshow">
       <div className="slideshow__container">
         {data.filter((item, index) => {
-          return index === slideIndex
-        }) }
+          return index === slideIndex;
+        })}
       </div>
     </div>
   );

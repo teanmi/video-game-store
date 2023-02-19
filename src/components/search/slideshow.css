@@ -20,12 +20,19 @@
   color: var(--black-border);
 }
 
-.slide img {
+.slide .slideshowImg__container {
   aspect-ratio: 16 / 9 ;
 }
 
+.slideshowImg__container img {
+  height: 100%;
+}
+
+
 .slide__text {
   text-align: center;
+  color: var(--main-pink);
+  font-weight: 700;
 }
 
 @media (max-width: 728px) {

@@ -28,10 +28,10 @@ const Nav = ({ links }) => {
   return (
     <nav className="nav">
       <div className="nav__container">
-        <div className="nav__company">
+        <Link to="/" className="nav__company">
           <VideogameAssetIcon fontSize="large" className="nav__logo" />
           <div className="nav__companyName">Game Mart</div>
-        </div>
+        </Link>
         <ul className="nav__links">
           {(links === "home" || links === "cart") && (
             <li>

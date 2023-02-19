@@ -12,6 +12,15 @@ const GameCart = ({ game }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    if (
+      document.getElementById(`gameCart__amountNumber${gameData.id}`).value ===
+      ""
+    ) {
+      document.getElementById(`gameCart__amountNumber${gameData.id}`).value = 0;
+    }
+  }, []);
+
+  useEffect(() => {
     setGameData(game.payload);
   }, [game.payload]);
 
@@ -83,7 +92,7 @@ const GameCart = ({ game }) => {
 
     document.getElementById(`gameCart__amountNumber${gameData.id}`).value =
       value;
-      
+
     changeGameAmount(value);
   };
 
