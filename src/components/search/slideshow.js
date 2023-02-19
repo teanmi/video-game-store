@@ -23,10 +23,10 @@ const Slideshow = () => {
     </Link>,
     <Link to="../game/god-of-war-ragnarok" key={2} className="slide fade">
       <div className="slideshowImg__container">
-        {loaded1 ? null : <Skeleton width="100%" height="100%" />}
+        {loaded2 ? null : <Skeleton width="100%" height="100%" />}
         <img
-          onLoad={() => setLoaded1(true)}
-          style={loaded1 ? {} : { display: "none" }}
+          onLoad={() => setLoaded2(true)}
+          style={loaded2 ? {} : { display: "none" }}
           src="images/god-of-war.jpg"
           alt=""
         />
@@ -35,10 +35,10 @@ const Slideshow = () => {
     </Link>,
     <Link to="../game/far-cry-6" key={3} className="slide fade">
       <div className="slideshowImg__container">
-        {loaded1 ? null : <Skeleton width="100%" height="100%" />}
+        {loaded3 ? null : <Skeleton width="100%" height="100%" />}
         <img
-          onLoad={() => setLoaded1(true)}
-          style={loaded1 ? {} : { display: "none" }}
+          onLoad={() => setLoaded3(true)}
+          style={loaded3 ? {} : { display: "none" }}
           src="images/far-cry-6.jpg"
           alt=""
         />
