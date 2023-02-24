@@ -65,7 +65,11 @@ const Slideshow = () => {
 
   return (
     <div className="slideshow">
-      <div className="slideshow__container">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="200"
+        className="slideshow__container"
+      >
         {data.filter((item, index) => {
           return index === slideIndex;
         })}

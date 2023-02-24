@@ -54,13 +54,19 @@ const SearchBar = () => {
   return (
     <div className="searchBar">
       <div className="searchBar__container">
-        <div className="searchBar__row">
-          <SearchIcon className="searchBar__img" fontSize="large" />
+        <div data-aos="fade-down"
+            data-aos-delay="200" className="searchBar__row">
+          <SearchIcon
+          
+            className="searchBar__img"
+            fontSize="large"
+          />
           <input
+            x
             onKeyUp={(event) => enterKeyListener(event)}
             className="searchBar__input"
             type="text"
-            placeholder="Enter Game Title"
+            placeholder="Enter Title"
             value={gameName}
             onChange={(event) => updateGameName(event)}
           />

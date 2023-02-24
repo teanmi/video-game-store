@@ -2,9 +2,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Search from "./pages/search";
 import Cart from "./pages/cart";
-import Game from "./pages/game"
+import Game from "./pages/game";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
+  AOS.init({ duration: 1000, });
+
   return (
     <Router>
       <Routes>

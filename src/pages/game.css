@@ -87,3 +87,19 @@
 .gamePage__addToCartBtn:active {
   opacity: .3;
 }
+
+.gamePage__skeletonBox {
+  height: 400px;
+}
+
+@media (max-width: 1024px) {
+  .gamePage__skeletonBox {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gamePage__skeletonBox {
+    height: 200px;
+  }
+}

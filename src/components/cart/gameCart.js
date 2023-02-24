@@ -6,7 +6,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { useDispatch } from "react-redux";
 import { setAmount, deleteGame } from "../../redux/cartSlice";
 
-const GameCart = ({ game }) => {
+const GameCart = ({ game, delay }) => {
   const [gameData, setGameData] = useState(game.payload);
   const [price, setPrice] = useState(0);
   const dispatch = useDispatch();
@@ -105,7 +105,7 @@ const GameCart = ({ game }) => {
   };
 
   return (
-    <div className="gameCart">
+    <div data-aos="fade-up" data-aos-delay={delay} className="gameCart">
       <div className="gameCart__left">
         <img
           className="gameCart__img"
